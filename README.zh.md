@@ -81,19 +81,19 @@ DeepSeek Harness（dsh）的智能体本来就能跑 bash，但每个 macOS 原�
 
 **环境要求：** macOS 13 或更高版本、DeepSeek Harness 0.2.x，以及 dsh 自带的 Node 运行时。
 
-### 从本地 checkout 安装（推荐）
+### 一行命令，直接从 GitHub 安装（推荐）
 
 ```sh
-git clone https://github.com/wu04186767/dsh-plugin-macos.git
-dsh plugin --profile web add ./dsh-plugin-macos
+dsh plugin --profile web add github:wu04186767/dsh-plugin-macos
 ```
 
 如果你用的是 DeepSeek Harness 桌面版，请把 ``web`` 换成 ``desktop``，然后重启应用（或重启 dsh）让 bundle 生效。
 
-### 直接从 GitHub 安装
+### 从本地 checkout 安装（开发调试用）
 
 ```sh
-dsh plugin --profile web add github:wu04186767/dsh-plugin-macos
+git clone https://github.com/wu04186767/dsh-plugin-macos.git
+dsh plugin --profile web add ./dsh-plugin-macos
 ```
 
 ### 验证
@@ -118,6 +118,8 @@ dsh --profile web --dump-config | grep dsh-plugin-macos
 | 自动化 → Finder | ``macos_finder_path`` | 同上 |
 | 屏幕录制 | ``macos_screenshot`` | 系统设置 → 隐私与安全性 → 屏幕录制 |
 | Safari 开发者设置 | ``safari_javascript`` | Safari → 设置 → 开发者 → 允许来自 Apple 事件的 JavaScript |
+
+在本地 checkout 中运行 `node scripts/doctor.mjs`，会逐个调用需要权限的工具，并告诉你 macOS 当前允许了哪些权限。
 
 插件**不发起任何网络请求**，**不收集任何遥测数据**。
 
@@ -151,7 +153,8 @@ dsh --profile web --dump-config | grep dsh-plugin-macos
 ```sh
 git clone https://github.com/wu04186767/dsh-plugin-macos.git
 cd dsh-plugin-macos
-node test/smoke.mjs   # 在本机跑一遍只读工具
+node test/smoke.mjs      # 在本机跑一遍只读工具
+node scripts/doctor.mjs  # 权限体检：逐个调用需要权限的工具
 ```
 
 ```
@@ -160,6 +163,7 @@ lib/define.js     零依赖的工具定义构造器
 lib/tools.js      真正的 macOS 操作（argv 数组 + osascript）
 lib/exec.js       进程 / AppleScript 辅助函数与权限提示
 test/smoke.mjs    注册检查 + 只读工具实测
+scripts/doctor.mjs  权限体检脚本
 locale/           中英文插件元信息
 cordis.patch.yml  把插件插入 dsh profile 的 bundle patch
 ```
