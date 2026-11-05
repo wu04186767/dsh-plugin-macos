@@ -88,20 +88,20 @@ no npm dependencies.
 
 **Requirements:** macOS 13 or newer, DeepSeek Harness 0.2.x, and the Node runtime bundled with dsh.
 
-### From a checkout (recommended)
+### One line, directly from GitHub (recommended)
 
 ```sh
-git clone https://github.com/wu04186767/dsh-plugin-macos.git
-dsh plugin --profile web add ./dsh-plugin-macos
+dsh plugin --profile web add github:wu04186767/dsh-plugin-macos
 ```
 
 Use ``--profile desktop`` if you run the DeepSeek Harness desktop app, then restart the app
 (or ``dsh --profile web``) so the bundle loads.
 
-### Directly from GitHub
+### From a checkout (for development)
 
 ```sh
-dsh plugin --profile web add github:wu04186767/dsh-plugin-macos
+git clone https://github.com/wu04186767/dsh-plugin-macos.git
+dsh plugin --profile web add ./dsh-plugin-macos
 ```
 
 ### Verify
@@ -127,6 +127,9 @@ hosts dsh (DeepSeek Harness, or your terminal if you launched dsh from one):
 | Automation → Finder | ``macos_finder_path`` | same |
 | Screen Recording | ``macos_screenshot`` | System Settings → Privacy & Security → Screen Recording |
 | Safari developer setting | ``safari_javascript`` | Safari → Settings → Developer → **Allow JavaScript from Apple Events** |
+
+Run `node scripts/doctor.mjs` from a checkout to exercise every permission-dependent tool once and see
+exactly which permissions macOS currently allows.
 
 The plugin makes **no network requests** and stores **no telemetry**.
 
@@ -163,7 +166,8 @@ built-in ``bash`` tool. A few practical notes:
 ```sh
 git clone https://github.com/wu04186767/dsh-plugin-macos.git
 cd dsh-plugin-macos
-node test/smoke.mjs   # exercises the read-only tools against your Mac
+node test/smoke.mjs      # exercises the read-only tools against your Mac
+node scripts/doctor.mjs  # permission health check: runs every permission-dependent tool once
 ```
 
 ```
@@ -172,6 +176,7 @@ lib/define.js     zero-dependency builder for dsh-ready tool definitions
 lib/tools.js      the actual macOS work (argv arrays + osascript)
 lib/exec.js       process / AppleScript helpers and permission messages
 test/smoke.mjs    registration + live read-only checks
+scripts/doctor.mjs  permission health check
 locale/           English and Chinese plugin metadata
 cordis.patch.yml  bundle patch that inserts the plugin into a dsh profile
 ```
