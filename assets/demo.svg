@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="420" viewBox="0 0 1280 420" role="img" aria-label="Example dsh-plugin-macos session">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070A14"/>
+      <stop offset="1" stop-color="#100D22"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="420" rx="20" fill="url(#bg)" stroke="#2A3357" stroke-width="1.5"/>
+  <g font-family="'SF Mono', Menlo, Consolas, monospace" font-size="18">
+    <circle cx="34" cy="34" r="7" fill="#FF5F57"/>
+    <circle cx="58" cy="34" r="7" fill="#FEBC2E"/>
+    <circle cx="82" cy="34" r="7" fill="#28C840"/>
+    <text x="34" y="76" fill="#6E7AA6" font-size="15">example session · dsh + dsh-plugin-macos</text>
+    <text x="34" y="122" fill="#8FD8FF">you</text>
+    <text x="86" y="122" fill="#E6EDFF">"Notify me when the build finishes, then tell me my battery."</text>
+    <text x="34" y="166" fill="#5EF2B8">agent</text>
+    <text x="110" y="166" fill="#A78BFA">macos_notify</text>
+    <text x="248" y="166" fill="#C7D2FE">{"title":"dsh","message":"Build finished"}</text>
+    <text x="110" y="196" fill="#5EF2B8">✓</text>
+    <text x="132" y="196" fill="#8A99C2">native notification shown</text>
+    <text x="34" y="240" fill="#5EF2B8">agent</text>
+    <text x="110" y="240" fill="#A78BFA">macos_info</text>
+    <text x="110" y="270" fill="#5EF2B8">✓</text>
+    <text x="132" y="270" fill="#8A99C2">macOS 27.2 · arm64 · on AC power · 228 GB disk</text>
+    <text x="34" y="314" fill="#8FD8FF">you</text>
+    <text x="86" y="314" fill="#E6EDFF">"What tabs do I have open in Safari?"</text>
+    <text x="34" y="358" fill="#5EF2B8">agent</text>
+    <text x="110" y="358" fill="#A78BFA">safari_tabs</text>
+    <text x="110" y="388" fill="#5EF2B8">✓</text>
+    <text x="132" y="388" fill="#8A99C2">3 tabs: x.com · github.com · github.com/settings/tokens</text>
+  </g>
+</svg>
