@@ -1,0 +1,4 @@
+# dsh bundle patch: inserts this plugin into a profile layer stack.
+- insert:
+    - id: dsh-plugin-macos
+      name: 'dsh-plugin-macos'
