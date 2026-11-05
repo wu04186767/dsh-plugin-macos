@@ -30,6 +30,10 @@ Spotlight, Shortcuts, AppleScript and real Safari tabs. Everything runs locally 
 ``child_process`` and ``osascript``: no cloud service, no browser extension, no accessibility tree, no build step,
 no npm dependencies.
 
+<p align="center">
+  <img src="assets/demo.svg" alt="Example session: the agent sends a notification, reads system info, and lists Safari tabs" width="100%">
+</p>
+
 ## Why this plugin
 
 - **Broad but boring, on purpose.** It covers the long tail of daily Mac chores instead of one narrow trick.
@@ -151,6 +155,8 @@ built-in ``bash`` tool. A few practical notes:
 - DeepSeek Harness 0.2.x (plugin bundles are developer preview; APIs can change between releases).
 - macOS 13+; developed and tested on macOS 27.2 (Apple silicon).
 - Plain ESM, no build step, no runtime dependencies.
+- Verified by mounting the plugin in a real Cordis ToolRuntime with `@deepseek-ai/dsh-tools` 0.2.1-rc.5 and
+  0.2.2-rc.1: all 21 model-facing schemas register, and the tools execute and dispose correctly.
 
 ## Development
 
