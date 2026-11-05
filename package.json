@@ -21,6 +21,7 @@
     "LICENSE"
   ],
   "dsh": {
+    "manifestVersion": 1,
     "bundle": {
       "patch": "./cordis.patch.yml"
     }
@@ -37,7 +38,8 @@
   ],
   "license": "MIT",
   "engines": {
-    "node": ">=20"
+    "node": ">=20",
+    "dsh": ">=0.2.1-rc.5 <0.3.0"
   },
   "sideEffects": false,
   "repository": {
@@ -48,5 +50,12 @@
   "bugs": {
     "url": "https://github.com/wu04186767/dsh-plugin-macos/issues"
   },
-  "author": "wu04186767"
+  "author": "wu04186767",
+  "icon": "./icon.svg",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "node test/smoke.mjs"
+  }
 }
