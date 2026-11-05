@@ -1,0 +1,52 @@
+{
+  "name": "dsh-plugin-macos",
+  "version": "0.1.0",
+  "description": "Native macOS tools for DeepSeek Harness agents: notifications, clipboard, screenshots, speech, keep-awake, Shortcuts, AppleScript and Safari control.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "lib/*.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "macos",
+    "automation",
+    "applescript",
+    "safari",
+    "agent-tools"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wu04186767/dsh-plugin-macos.git"
+  },
+  "homepage": "https://github.com/wu04186767/dsh-plugin-macos#readme",
+  "bugs": {
+    "url": "https://github.com/wu04186767/dsh-plugin-macos/issues"
+  },
+  "author": "wu04186767"
+}
